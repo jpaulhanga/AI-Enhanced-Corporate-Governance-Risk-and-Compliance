@@ -1,4 +1,4 @@
-# AI Enhanced Corporate Governance Risk and Compliance
+# AI Enhanced Corporate Governance, Risk, and Compliance
 
 This Project explore an **AI-approach towards achieving Corporate Governance, Risk and Compliance engineering** with the main aim of accurately and efficiently to better handle complex corporate governance documents and compliance regulations across different jurisdictions, enforce compliance, automatically generate audit logs, coordinate compliance reporting, alert escalation, regulatory filings, and cross-department knowledge transfer, and proactively simulate compliance risks and advise on preventive measures. Therefore, expanding from **decision support to decision augmentation**, transforming governance operations. 
 
