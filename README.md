@@ -8,50 +8,74 @@ The proposed solutionn seeks to extend the baseline paper about improving corpor
 
 **Step 1: Data Collection :- Gather structured + unstructured inputs**
 
-  Numeric financial dataset: - **Corporate Financial Risk Assessment Dataset** Provides structured financial indicators.
+  **Numeric financial dataset:** Provides structured financial indicators.
   
-  Text dataset (10-K reports): - **SEC EDGAR Annual Financial Filings – 2021, SEC Filings Financial Summary – Apple/Tesla/Microsoft** Contains long governance/financial texts.
+    Corporate Financial Risk Assessment Dataset 
+
+  **Text dataset (10-K reports):** Contains long governance/financial texts.
   
-ESG ratings dataset: - **Public Company ESG Ratings, S&P 500 ESG Risk Ratings** Provides governance, environmental, and social risk scores.
+      SEC EDGAR Annual Financial Filings – 2021, 
+      
+      SEC Filings Financial Summary – Apple/Tesla/Microsoft
+      
+  
+  **ESG ratings dataset:** - Provides governance, environmental, and social risk scores. 
+  
+    Public Company ESG Ratings, 
+    
+    S&P 500 ESG Risk Ratings** 
 
-**Output**: Unified dataset aligned on ('ticker', 'year').
+**Output**: 
+  Unified dataset aligned on ('ticker', 'year').
 
-**Method**: Same as baseline — collect data, join by company + year.
+**Method**: 
+
+  collect data, join by company + year.
+  
 
 **Step 2: Preprocessing:- Prepare clean inputs and labels**
 
-  Numeric preprocessing: fill missing values, normalize with StandardScaler.
+  **Numeric preprocessing:** 
+  
+    fill missing values, normalize with StandardScaler.
 
-  Text preprocessing: clean raw 10-K text (remove special characters, whitespace).
+  **Text preprocessing:** 
+  
+    clean raw 10-K text (remove special characters, whitespace).
 
-  Label design:
+  **Label design:**
   
     Risk Level: Low/Medium/High
       
     Risk Type (extended): added 8 categories (Financial, Legal, Operational, Ethical, Strategic, Reputational, Cyber, ESG).
 
       
-  Output:
+  **Output:**
 
-  X_num = numeric features
+    X_num = numeric features
   
-  texts = cleaned texts
+    texts = cleaned texts
 
-  y_level, y_type = labels
+    y_level, y_type = labels
+    
 
 **Step 3: NLP Feature Extraction:-Convert texts into numerical embeddings.**
 
-  Models:
+  **Models:**
   
     FinBERT for financial texts
     
     Legal-BERT for regulatory texts
 
-  Method: chunk text into 512 tokens, embed with transformer, pool into single vector per document.
+  **Method:**
+    chunk text into 512 tokens, embed with transformer, pool into single vector per document.
   
-  Optional (extension): Add lexicon-based features for each risk type (keyword counts).
+    Optional (extension): Add lexicon-based features for each risk type (keyword counts).
   
-Output: X_text = dense vectors representing each 10-K.
+  **Output:**
+  
+    X_text = dense vectors representing each 10-K.
+    
 
 **Step 4: Machine Learning (extended beyond baseline) : - Train models to predict risk level and risk type.**
 
